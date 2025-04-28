@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* reset */
+body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,legend,textarea,p,blockquote,input,select,textarea,button{margin:10px 10px;padding:0;outline:none}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+input,select,textarea,button {vertical-align:middle}
+input::-ms-clear {display:none}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {background:#fff}
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
+body,input,select,textarea,button {font-size:14px;line-height:1.5;font-family:'Nanum Gothic', sans-serif;color:#666} 
+th,td {font-size:14px;font-family:'Nanum Gothic', sans-serif;color:#666} 
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+@font-face{font-family:'keyboard'; src:url('/img/keyboard.woff')}
+.keyimg { font: 0.75em/1.5 'keyboard'; }
+.centerbox {
+    position:fixed;
+    top: 50%; left: 50%;
+    width:40em; margin-left: -20em; 
+    height:34em; margin-top: -17em; 
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+.mbut { font-size:24px; background-color: #4F81BD; color:#fff; padding: 2px 15px 5px 15px}
+.mlink { font-size:20px; }
+.slink { font-size:10px; }

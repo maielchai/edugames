@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate-3.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="css/gift-grabber.css">
+
+    <link rel="icon" href="favicon.ico">
+
+    <title>보물찾기</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn"t work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div id="game-container" class="container">
+        <div id="button-box" class="alert alert-info fade in animated fadeIn" role="alert">
+            <span id="info-buttons">
+                <span class="btn btn-default" data-toggle="modal" data-target="#rules">사용법</span>
+            </span>
+            <span id="game-buttons">
+                <span id="restart-button" class="btn btn-primary">다시시작</span>
+            </span>
+        </div>
+
+        <div id="game" class="col-xs-12"></div>
+
+    </div>
+
+    <div id="rules" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-title">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="rules-modal-title" class="modal-title">사용법</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row rules-row">
+                            <div class="col-lg-6">
+                                <div id="gift-rules-text" class="rules-text">보물을 찾아 보세요!</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="images/gift-tile.png">
+                            </div>
+                        </div>
+                        <div class="row rules-row">
+                            <div class="col-lg-6">
+                                <div id="arrow-rules-text" class="rules-text">화살표는 보물이 있는 방향을 가리킵니다.</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="images/arrow-tile.png">
+                            </div>
+                        </div>
+                        <div class="row rules-row">
+                            <div class="col-lg-6">
+                                <div id="number-rules-text" class="rules-text">숫자는 보물까지의 거리입니다<br>(대각선 제외)</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="images/number-tile.png">
+                            </div>
+                        </div>
+                        <div class="row rules-row">
+                            <div class="col-lg-6">
+                                <div id="fire-rules-text" class="rules-text">불꽃은 열린 모든 타일을 닫습니다.</div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="images/fire-tile.png">
+                            </div>
+                        </div>
+                        <div class="row rules-row">
+                            <div class="col-lg-12">
+                                <div class="rules-text">타일의 숫자와 가능한 횟수는 게임마다 달라 집니다.<br>그래서 어떤 게임은 다른 게임보다 어려울 수 있습니다!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backbone templates -->
+    <script type="text/template" id="template-stats">
+        <div class="col-sm-5 col-sm-offset-1 stats-row">횟수: <%- movesRemaining %>/<%- moves %></div>
+        <div class="col-sm-5 stats-row">
+            <span class="stats-tile-container"><span class="stats-tile revealed good glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <%- arrows %></span>
+            <span class="stats-tile-container"><span class="stats-tile revealed good" aria-hidden="true">3</span> <%- numbers %></span>
+            <span class="stats-tile-container"><span class="stats-tile revealed bad glyphicon glyphicon-fire" aria-hidden="true"></span> <%- fires %></span>
+        </div>
+    </script>
+
+    <script type="text/template" id="template-end-dialog">
+        <% if (won) { %>
+            <div class="text-success">축하합니다!</div>
+        <% } else { %>
+            <div class="text-danger">아깝군요!</div>
+        <% } %>
+    </script>
+
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-3.3.5.min.js"></script>
+    <script type="text/javascript" src="js/underscore-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/backbone-1.2.2.min.js"></script>
+    <script type="text/javascript" src="js/backbone.marionette-2.4.2.min.js"></script>
+
+    <script type="text/javascript" src="js/gift-grabber.js"></script>
+    <script type="text/javascript" src="js/models.js"></script>
+    <script type="text/javascript" src="js/views.js"></script>
+
+<?php include "../tail.inc"; ?>	
+  </body>
+</html>
