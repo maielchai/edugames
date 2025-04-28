@@ -13,7 +13,7 @@ function setCheck(num)
 {
 	var but = document.getElementById('o'+num);
 	checkcnt ++;
-	but.src='/img/fireshow.gif';
+	but.src='../img/fireshow.gif';
 	setTimeout("document.getElementById('o"+num+"').style.display='none'", 1000);
 	if (checkcnt >= 8) document.getElementById('gobut').style.display = 'block';
 }
