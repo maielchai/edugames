@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>지뢰 찾기</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="contextMenu/contextMenu.min.css">
+
+    </head>
+
+    <body>
+        <div id="wholeGame" style="left:10px; top:10px;">
+            <div class="text-left" id="titleBar">
+                <span id="gameMenu">게임</span>
+                <span id="helpMenu">도움말</span>
+                <div id="custDiff" class="gameOptions collapse">
+                    <span>폭:</span>
+                    <input id="width" type="number" min="9" placeholder="9">
+                    <span>높이:</span>
+                    <input id="height" type="number" min="1" placeholder="1">
+                    <span>지뢰:</span>
+                    <input id="mines" type="number" min="1" placeholder="1">
+                    <button id="custDiffBtn">확인</button>
+                </div>
+            </div>
+            <div id="gameHeader">   
+                <h3 id="scoreWrapper">888<span id="score">000</span></h3>
+                <div id="newGame"></div>
+                <h3 id="secondsWrapper">888<span id="seconds">000</span></h3><br>
+            </div>
+            <div id="gameBoard"></div>
+        </div>
+
+        <div id="instructionsModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">지뢰 찾기 사용법!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>모든 지뢰를 빠른 시간 내에 찾아보세요. 만약에 지뢰로 의심되는 곳이 있으면 우측 마우스로 클릭하여 깃발을 표시하세요. 
+					우측 마우스를 한번더 클릭하면 물음표를 표시하고 세번째로 클릭하면 원래대로 돌아 옵니다.
+					좌측 마우스로 클릭하면 다음 중 한가지로 열릴 수 있습니다:</p>
+                        <ul>
+                            <li>지뢰 (이 경우 게임은 끝납니다)</li>
+                            <li>숫자</li>
+                            <li>빈곳</li>
+                        </ul>
+                    <p>지뢰가 열리면 게임은 끝납니다. 
+					빈곳이 열리면 각 방향으로 숫자가 존재하는 곳까지 빈곳을 모두 엽니다. 
+					1 ~ 8의 숫자는 주위에 있는 지뢰의 숫자입니다. 
+					남아 있는 지뢰의 숫자는 좌측 상단에 표시되고 남은 시간은 우측 상단에 표시 됩니다.
+					페이지를 로드하면 어려운 모드로 시작하는데 게임 옵션에서 변경할 수 있습니다.
+					어려운 모드는 16 x 30 크기에 지뢰가 99개이고 중간 모드는 16 x 16 크기에 지뢰가 40개입니다. 쉬운 모드는 9 x 9 크기에 지뢰는 10개 입니다.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- JQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+        <!-- BootStrap -->
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        
+        <script src="contextMenu/contextMenu.min.js"></script>
+        <script src="main.js"></script>
+		
+<div style="position:absolute;bottom:0;right:0;width: 100%;  height: 3em;">  
+<?php include "../tail.inc"; ?>
+</div>		
+    </body>
+</html>

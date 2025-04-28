@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>ASDF 연습</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/asdf.css" >
+    
+
+        <script type="text/javascript" src="js/pubsub.js"></script>
+        <script type="text/javascript" src="js/riffwave.js"></script>
+        <script type="text/javascript" src="js/asdf.js"></script>
+        <link rel="shortcut icon" href="img/asdf.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+    
+        <div class="wrapper">
+          <span role="hole">
+              <div id="status"></div>
+          </span>
+          <section id="gaming-buttons">
+              <button role="one" class="a"></button>
+              <button role="two" class="s"></button>
+              <button role="three" class="d"></button>
+              <button role="four" class="f"></button>
+          </section>
+            
+          <div id="info">
+              <div id="score">0000000</div>
+              <div id="level">0</div>
+              <div id="mode-text">일반</div>
+          </div>
+        </div>
+        
+        <div id="controls">
+            <button id="space" class="key">공백키</button> <span><b>새로운 게임</b></span>
+            <button id="esc" class="key">ESC키</button> <span><b>리셋</b></span>
+            
+            <hr />
+            
+            <b>모드</b>
+            <form id="mode">
+                <input type="radio" name="mode" id="normal" checked>
+                <label id="one" class="key" for="normal">1</label>
+                <input type="radio" name="mode" id="expert">
+                <label id="two" class="key" for="expert">2</label>
+                <input type="radio" name="mode" id="hell">
+                <label id="three" class="key" for="hell">3</label>
+            </form>
+                
+            <hr />
+            
+            <b>소리</b> 
+            <button id="up" class="key">&#8592;</button> <span>--</span>
+            <button id="down" class="key">&#8594;</button> <span>++</span>
+        </div>
+        
+        <div id="message"><div class="container"></div></div>
+<div style="position:absolute;bottom:0;right:0;width: 100%;  height: 3em;z-index: 0">  
+<?php include "../tail.inc"; ?>
+</div>    
+    </body>
+</html>
