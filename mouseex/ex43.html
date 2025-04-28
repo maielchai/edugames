@@ -17,8 +17,19 @@
 
 <div style="background-image: url('../img/certcert.png'); width:497px; height:316px;">
 <br><center><h1>마우스 연습 완료 인증서</h1></center><br><br>
-<center><h2><?php echo htmlspecialchars($_GET["fname"]); ?></h2></center><br>
-<center>나이 : <?php echo htmlspecialchars($_GET["fage"]); ?>세</center><br>
+<center><h2>
+<script>
+const params = new URL(location.href).searchParams;
+const fname = params.get('fname');  
+const fage = params.get('fage');  
+document.write(fname);
+</script>
+</h2></center><br>
+<center>나이 : 
+<script>
+document.write(fage);
+</script>  
+  세</center><br>
 <center>위의 사람은 마우스 연습 과정을 성실하게 끝냈음을 인정합니다.</center>
 </div>
 
