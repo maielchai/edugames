@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>라디오버튼 연습</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script type="text/javascript" language="javascript">
+var checkcnt = 0;
+var rbt = new Array(10);
+rbt[1] = false;
+rbt[2] = false;
+rbt[3] = false;
+rbt[4] = false;
+rbt[5] = false;
+rbt[6] = false;
+rbt[7] = false;
+rbt[8] = false;
+
+function setCheck(num)
+{
+	if  (rbt[num]==false) {
+		rbt[num]=true;
+		checkcnt ++;
+		if (checkcnt >= 8) document.getElementById('gobut').style.display = 'block';
+	}
+}
+</script>
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left>
+<h2><img src='/img/mouse1.png' border=0 height=24>작은 원을 라디오 버튼이라고 합니다. 여러개 중에서 하나만을 선택할 때 사용합니다.<br>
+모든 버튼을 클릭하면 다음으로 진행할 수 있습니다.<br>(단, 한번에 하나만 선택됩니다)</h2>
+</td></tr>
+<tr>
+<td align=left>
+<form>
+<font size=4>
+<input type="radio" name="rbut" onclick="setCheck(1)">1월<br>
+<input type="radio" name="rbut" onclick="setCheck(2)">2월<br>
+<input type="radio" name="rbut" onclick="setCheck(3)">3월<br>
+<input type="radio" name="rbut" onclick="setCheck(4)">4월<br>
+<input type="radio" name="rbut" onclick="setCheck(5)">5월<br>
+<input type="radio" name="rbut" onclick="setCheck(6)">6월<br>
+<input type="radio" name="rbut" onclick="setCheck(7)">7월<br>
+<input type="radio" name="rbut" onclick="setCheck(8)">8월
+</form>
+</form>
+</td></tr>
+<tr>
+<td align=center>
+<a href="ex37.html"><img src='/img/next.png' border=0 width=32 id="gobut" style="display:none"></a>
+</td></tr>
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>

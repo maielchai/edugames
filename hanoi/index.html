@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>하노이 탑 연습</title>
+    <script type="text/javascript" src="javascripts/miscellany.js"></script>
+    <script type="text/javascript" src="javascripts/game.js"></script>
+    <script type="text/javascript" src="javascripts/debug.js"></script>
+    <script type="text/javascript" src="javascripts/input_handler.js"></script>
+    <script type="text/javascript" src="javascripts/point.js"></script>
+    <script type="text/javascript" src="javascripts/element_coordinate_finder.js"></script>
+    <script type="text/javascript" src="javascripts/tower_manager.js"></script>
+    <script type="text/javascript" src="javascripts/game_state.js"></script>
+    <script type="text/javascript" src="javascripts/victory_celebrator.js"></script>
+    <script type="text/javascript" src="javascripts/tower.js"></script>
+    <script type="text/javascript" src="javascripts/disk.js"></script>
+    <script type="text/javascript" src="javascripts/canvas.js"></script>
+    <script type="text/javascript" src="javascripts/colour.js"></script>
+    <script type="text/javascript" src="javascripts/init.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  </head>
+
+  <body>
+   <div style="position:fixed; top:0px; right:20px">
+		<p>옮긴 횟수 : <span class="movecnt">0</span></p>		
+	</div>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <div id="introduction">
+      <div id="introduction-message">
+        <h1>하노이 탑</h1>
+        <p>하노이 탑 게임은 아주 단순합니다. 첫번째 탑에 있는 것들을 다른 탑으로 옮기면 됩니다. 
+		제약이 있다면 하나씩만 옮길 수 있고 작은 것 위에 큰 것을 올려 둘 수 없다는 것입니다.</p>
+        <input id="start-new-game" type="button" value=" 게임 시작 " />
+      </div>
+    </div>
+    <div id="victory-notification">
+      <div id="victory-message">
+        <h1>성공!</h1>
+        <p>축하합니다! 하노이 탑을 끝냈습니다.</p>
+        <p><input id="disks-count" type="text" size="2" maxlength="2" value="3" /> 개로 <input id="play-again" type="button" value=" 게임 다시 하기 " /> 
+		<input type="button" value=" 홈으로 돌아가기 " onclick='window.location="/index.html"' />
+          </p>
+      </div>
+    </div>
+    <div id="debug"></div>
+<br><br><br><br><br>
+<?php include "../tail.inc"; ?>	
+  </body>
+</html>

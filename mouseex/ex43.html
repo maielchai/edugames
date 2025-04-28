@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>텍스트 박스 연습</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left colspan=2>
+<h2><img src='/img/mouse1.png' border=0 height=24><font color=red>축하합니다!</font><br>
+마우스 연습이 모두 끝났습니다. 어렵지 않으셨죠?</h2><br>
+</td></tr>
+<tr>
+<td align=center colspan=2>
+
+<div style="background-image: url('/img/certcert.png'); width:497px; height:316px;">
+<br><center><h1>마우스 연습 완료 인증서</h1></center><br><br>
+<center><h2><?php echo htmlspecialchars($_GET["fname"]); ?></h2></center><br>
+<center>나이 : <?php echo htmlspecialchars($_GET["fage"]); ?>세</center><br>
+<center>위의 사람은 마우스 연습 과정을 성실하게 끝냈음을 인정합니다.</center>
+</div>
+
+</td></tr>
+<tr>
+<td align=center colspan=2>
+연습을 다시 하시거나, 처음으로 돌아갈 수 있습니다.
+</td></tr>
+<tr>
+<td align="right">
+<form action="ex01.html">
+<input type="submit" value=" 연습 다시하기 " class='mbut'>
+</form></td>
+<td align="left">
+<form action="/index.html"">
+<input type="submit" value="홈으로 돌아가기" class='mbut'>
+</form></td>
+</tr>
+
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>

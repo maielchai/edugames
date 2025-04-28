@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>버튼 연습 6</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script type="text/javascript" src="/css/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+<!--
+var checkcnt = 0;
+function setCheck(num)
+{
+	var but = document.getElementById('o'+num);
+	if  (but.style.display == 'none') {
+		but.style.display = 'block';
+		checkcnt ++;
+		if (checkcnt >= 8) document.getElementById('gobut').style.display = 'block';
+	}
+}
+   //-->
+    //]]>
+</script>
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left colspan=4>
+<h2><img src='/img/mouse1.png' border=0 height=24>아래의 버튼들을 클릭해서 다음으로 이동해 보세요. <br/>
+버튼을 모두 클릭하면 다음으로 이동할 수 있는 버튼이 나옵니다.</h2><br/>
+</td></tr>
+<tr>
+<td align="center" valign="middle"><img src="/img/face1.png" width="64" id="b1" onclick="javascript:setCheck(1)"></td>
+<td align="center" valign="middle"><img src="/img/face2.png" width="64" id="b2" onclick="javascript:setCheck(2)"></td>
+<td align="center" valign="middle"><img src="/img/face3.png" width="64" id="b3" onclick="javascript:setCheck(3)"></td>
+<td align="center" valign="middle"><img src="/img/face4.png" width="64" id="b4" onclick="javascript:setCheck(4)"></td>
+</tr>
+<tr height="70px">
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o1" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o2" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o3" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o4" style="display:none"></td>
+</tr>
+<tr>
+<td align="center" valign="middle"><img src="/img/face5.png" width="64" id="b5" onclick="javascript:setCheck(5)"></td>
+<td align="center" valign="middle"><img src="/img/face6.png" width="64" id="b6" onclick="javascript:setCheck(6)"></td>
+<td align="center" valign="middle"><img src="/img/face7.png" width="64" id="b7" onclick="javascript:setCheck(7)"></td>
+<td align="center" valign="middle"><img src="/img/face8.png" width="64" id="b8" onclick="javascript:setCheck(8)"></td>
+</tr>
+<tr height="70px">
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o5" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o6" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o7" style="display:none"></td>
+<td align="center" valign="middle"><img src="/img/ok.png" width="64" id="o8" style="display:none"></td>
+</tr>
+<tr><td align=center colspan=4>
+<a href="ex24.html"><img src='/img/next.png' border=0 width=32 id="gobut" style="display:none"></a>
+</td></tr>
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>

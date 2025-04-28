@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>더블클릭 연습</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script type="text/javascript" src="/css/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+<!--
+var checkcnt = 0;
+function setCheck(num)
+{
+	var but = document.getElementById('o'+num);
+	checkcnt ++;
+	but.src='/img/fireshow.gif';
+	setTimeout("document.getElementById('o"+num+"').style.display='none'", 1000);
+	if (checkcnt >= 8) document.getElementById('gobut').style.display = 'block';
+}
+   //-->
+    //]]>
+</script>
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left colspan=4>
+<h2><img src='/img/mouse1.png' border=0 height=24>아래의 상자를 더블클릭해서 다음으로 이동해 보세요. <br/>
+상자를 모두 더블클릭하면 다음으로 이동할 수 있는 버튼이 나옵니다.</h2><br/>
+</td></tr>
+<tr height="128" >
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o1" onDblClick="setCheck(1)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o2" onDblClick="setCheck(2)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o3" onDblClick="setCheck(3)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o4" onDblClick="setCheck(4)"></td>
+</tr>
+<tr height="128">
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o5" onDblClick="setCheck(5)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o6" onDblClick="setCheck(6)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o7" onDblClick="setCheck(7)"></td>
+<td align="center" valign="middle" width="128"><img src="/img/ark.png" width="128" height="128" id="o8" onDblClick="setCheck(8)"></td>
+</tr>
+
+<tr><td align=center colspan=4>
+<a href="ex26.html"><img src='/img/next.png' border=0 width=32 id="gobut" style="display:none"></a>
+</td></tr>
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>

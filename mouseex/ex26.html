@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>드래그 연습</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+  #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 93%;
+	margin: 20px;
+  }
+  #swatch {
+    width: 95%;
+    height: 100px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; margin: 0px;}
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; margin: 0px;}
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; margin: 0px;}
+  #blue .ui-slider-handle { border-color: #729fcf; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString( 16 ),
+        g.toString( 16 ),
+        b.toString( 16 )
+      ];
+      $.each( hex, function( nr, val ) {
+        if ( val.length === 1 ) {
+          hex[ nr ] = "0" + val;
+        }
+      });
+      return hex.join( "" ).toUpperCase();
+    }
+    function refreshSwatch() {
+      var red = $( "#red" ).slider( "value" ),
+        green = $( "#green" ).slider( "value" ),
+        blue = $( "#blue" ).slider( "value" ),
+        hex = hexFromRGB( red, green, blue );
+      $( "#swatch" ).css( "background-color", "#" + hex );
+    }
+ 
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  } );
+  </script>
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left>
+<h2><img src='/img/mouse1.png' border=0 height=24>슬라이더의 손잡이를 클릭해서 잡고 좌우로 움직여 배경색을 조정해 보세요.<br/>
+배경색을 모두 바꾸어 보신다음 다음으로 이동하세요.</h2><br/>
+</td></tr>
+<tr>
+<td align=center>
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+</td>
+</tr>
+
+
+<tr><td align=center colspan=4>
+<a href="ex27.html"><img src='/img/next.png' border=0 width=32 id="gobut"></a>
+</td></tr>
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>

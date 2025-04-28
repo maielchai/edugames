@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>체크박스 연습</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<script type="text/javascript" language="javascript">
+var checkcnt = 0;
+function setCheck(num)
+{
+	var but = document.getElementById('c'+num);
+	if  (but.checked) {
+		checkcnt ++;
+		if (checkcnt >= 8) document.getElementById('gobut').style.display = 'block';
+	}
+	else {
+	checkcnt --;
+	}
+}
+</script>
+</head>
+<body>
+<div class='centerbox'>
+<table width=100%>
+<tr><td align=left>
+<h2><img src='/img/mouse1.png' border=0 height=24>작은 사각형을 체크박스라고 합니다.<br/>
+선택 사항을 클릭하여 체크할 때 사용합니다. 각 체크박스를 체크하면 다음으로 이동할 수 있습니다.</h2>
+</td></tr>
+<tr>
+<td align=left>
+<form>
+<font size=4>
+<input type="checkbox" id="c1" onclick="setCheck(1)">1월<br>
+<input type="checkbox" id="c2" onclick="setCheck(2)">2월<br>
+<input type="checkbox" id="c3" onclick="setCheck(3)">3월<br>
+<input type="checkbox" id="c4" onclick="setCheck(4)">4월<br>
+<input type="checkbox" id="c5" onclick="setCheck(5)">5월<br>
+<input type="checkbox" id="c6" onclick="setCheck(6)">6월<br>
+<input type="checkbox" id="c7" onclick="setCheck(7)">7월<br>
+<input type="checkbox" id="c8" onclick="setCheck(8)">8월
+</font>
+</form>
+</td></tr>
+<tr>
+<td align=center>
+<a href="ex35.html"><img src='/img/next.png' border=0 width=32 id="gobut" style="display:none"></a>
+</td></tr>
+
+</table>
+</div>
+
+<?php include "tail.inc"; ?>
+</body>
+</html>
